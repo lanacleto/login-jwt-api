@@ -1,11 +1,12 @@
 import mongoose from 'mongoose'
+require('dotenv').config()
 
 class Database {
     constructor() {
         this.init()
     }
     init() {
-        mongoose.connect("mongodb+srv://luizanacleto:jacare23@authapi.xbjhc.mongodb.net/userDB?retryWrites=true&w=majority", { 
+        mongoose.connect(process.env.CONNECTION_STRING, { 
             useNewUrlParser: true, 
             useUnifiedTopology: true 
         })
